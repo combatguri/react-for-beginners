@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <p>{appType}</p>
+      <p>beginer {appType}</p>
       <select onChange={handleChangeSelect}>
         <option value={null}>Select Your App</option>
         {userApps.map((userApp, index) => (
@@ -33,13 +33,9 @@ function App() {
       </select>
       <hr />
 
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Routes>
-          <Route
-            path={process.env.PUBLIC_URL + "/"}
-            exact={true}
-            element={<PageHome />}
-          />
+          <Route path="/" exact={true} element={<PageHome />} />
           <Route path="/coin" element={<PageCoin />} />
           <Route path="/movie" element={<PageMovie />} />
           <Route path="/movie/detail/:id" element={<PageMovieDetail />} />
