@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <p>beginer {appType}</p>
+      <p>{appType}</p>
       <select onChange={handleChangeSelect}>
         <option value={null}>Select Your App</option>
         {userApps.map((userApp, index) => (
@@ -33,7 +33,7 @@ function App() {
       </select>
       <hr />
 
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" exact={true} element={<PageHome />} />
           <Route path="/coin" element={<PageCoin />} />
